@@ -47,3 +47,12 @@ group by  callnum) temp1,
 schClasses sc
 where temp1.callnum = schclasses.callnum;
 
+--exam proper outer join
+select c.c#, cname, temp.total_amt
+from customers c,
+(select c#, sum(amt) total_amt
+from orders o
+group by c#) temp 
+where c.cnum = temp.cnum(+);
+
+

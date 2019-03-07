@@ -44,3 +44,22 @@ begin
     dbms_output.put_line(p_who||' I said '||p_what);
 end;
 /
+--cannot do DDL in PLSQL (create table, alter, ect)
+--select has to go into local variable to store the data
+--select must only have one record
+--select in PLSQL
+declare
+v_major varachar(2);
+v_gpa number(3,2);
+
+begin
+  select major, gpa into v_major, v_gpa
+    from students
+    where snum - 101;
+
+    if v_major = 'IS' then
+      --stuff
+    else
+      --stuff
+  end;
+  /
