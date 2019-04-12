@@ -20,7 +20,7 @@ begin
 end;
 /
 --below is procedure called
-create or replace validate_snum
+create or replace check_snum
     (p_snum students.snum%type,
     p_answer OUT varchar2) as --out keyword to let know being passed out of procedure
     v_count number;
@@ -37,7 +37,7 @@ begin
 end;
 /
 
-CREATE OR REPLACE PROCEDURE VALIDATE_CALLNUM
+CREATE OR REPLACE PROCEDURE check_CALLNUM
     (p_callnum schclasses.callnum%type,
     p_answer OUT varchar2) as
     v_count number;
