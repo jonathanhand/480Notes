@@ -1,5 +1,5 @@
 --body:
-Create or Rplace Package body Enroll as
+Create or Replace Package body Enroll as
     procedure validSnum
         (p_snum in .. ,
         p_out OUT ... ) as
@@ -21,7 +21,7 @@ Create or Rplace Package body Enroll as
         --code
         end;
 End;
-/
+/ --the backslash is at the end of whole spec, not after each
 
 --table of content (header or spec)
 Create or Replace Package Enroll as
@@ -37,7 +37,7 @@ Create or Replace Package Enroll as
     (p_snum in ...,
     p_callnum in ...);
 end;
-/
+/ --backslash is at end of whole body, not at each procedure/function
 --package is like a book...
 --table of contents 
 --two parts: body and header
