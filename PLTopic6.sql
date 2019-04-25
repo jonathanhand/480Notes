@@ -142,3 +142,32 @@ rank snum sname gpa
 2   102 
 ...................
 define cursor sort by gpa
+
+--5/1
+cba 237B
+bring usb
+
+--ex 6.14
+split table into three orders (one for each warehouse)
+split line number by warehouse (the items in warehouse are line 1, 2, 3)
+
+faster to create a cursor, order by warehouse
+go through list once, if warehouse = same as last record warehouse, then same ordernumber
+else, increment order number
+same for line number, start at 1, then increment till new warehouse
+
+------------
+ v_prev_wh := 'xx';--so not previous is null
+Loop
+    fetch into v_WH --next record's wh
+
+    if v_wh != v_prev_wh then
+        new O#;
+        Line := 1,
+    else --same wh
+        same o#;
+        Line := Line +1;
+    end if;
+v_prev_wh := v_WH --to preserve previous wh
+end loop;
+--actual code on pg 78
